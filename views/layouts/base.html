@@ -1,0 +1,20 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{block "title" .}}Varsayılan Başlık{{end}}</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body class="bg-neutral-50 text-neutral-900">
+    {{template "partials/nav" .}}
+    <main class="container mx-auto max-w-4xl px-4 py-8">
+      {{block "content" .}}{{end}}
+    </main>
+    <footer class="py-8 text-center text-sm text-neutral-500">
+      © {{.Year}} MyBlog
+    </footer>
+  </body>
+</html>
+{{end}}

@@ -1,0 +1,38 @@
+{{define "content"}}
+<section class="space-y-6">
+  <header class="flex items-end justify-between">
+    <h1 class="text-3xl font-bold">{{.Title}}</h1>
+    <div class="w-64">
+      <input class="input" placeholder="Ara (dummy — HTMX sonraki yazıda)" />
+    </div>
+  </header>
+
+  <ul class="grid gap-4 md:grid-cols-2">
+    {{range .Posts}}
+    <li class="card">
+      <a class="block group" href="/posts/{{.ID}}">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold group-hover:underline">
+            {{.Title}}
+          </h2>
+          <span class="text-xs text-neutral-500">{{.PublishedAtStr}}</span>
+        </div>
+        <p class="mt-2 text-sm text-neutral-600">{{.ExcerptShort}}</p>
+        <div class="mt-4">
+          <span class="btn text-neutral-700">Oku</span>
+        </div>
+      </a>
+    </li>
+    {{else}}
+    <li class="card">
+      <p class="italic text-neutral-600">Henüz yazı yok.</p>
+    </li>
+    {{end}}
+  </ul>
+
+  <div class="rounded-lg border border-blue-200 bg-blue-50 p-4">
+    <strong class="block mb-1">Sonraki adım:</strong>
+    Bu listeyi HTMX ile <em>partial</em> olarak yeniler hale getireceğiz.
+  </div>
+</section>
+{{end}}

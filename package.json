@@ -1,0 +1,14 @@
+{
+  "name": "gotemplatehtmxblog",
+  "version": "1.0.0",
+  "description": "A simple blog using Go templates and HTMX",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/tailwind.css -o ./public/app.css --minify",
+    "watch:css": "npx tailwindcss -i ./assets/tailwind.css -o ./public/app.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3"
+  }
+}
